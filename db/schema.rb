@@ -13,9 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_08_15_141845) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "title"
-    t.string "category"
+    t.string "service"
+    t.string "key"
     t.string "company_name"
+    t.string "category"
+    t.string "title"
+    t.string "place"
     t.integer "pay_min"
     t.integer "pay_max"
     t.json "skills"

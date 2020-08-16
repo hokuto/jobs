@@ -1,0 +1,25 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @job.title
+p
+  strong
+    | Category:
+  = @job.category
+p
+  strong
+    | Company name:
+  = @job.company_name
+p
+  strong
+    | Pay min:
+  = @job.pay_min
+p
+  strong
+    | Pay max:
+  = @job.pay_max
+= link_to 'Edit', edit_job_path(@job)
+|  | 
+= link_to 'Back', jobs_path
