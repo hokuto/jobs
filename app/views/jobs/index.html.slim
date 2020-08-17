@@ -1,3 +1,6 @@
+scss:
+  .material-icons.md-18 { font-size: 18px; }
+
 p#notice
   = notice
 
@@ -20,11 +23,23 @@ h1 Jobs
         th Company name
         th Fee min
         th Fee max
+        th Skills
+        th Product Proposal Level
+        th Business Proposal Level
+        th People Management Level
+        th Link
     tbody
       - @jobs.each do |job|
         tr
           td= job.title
           td= job.category
           td= job.company_name
-          td= job.pay_min
-          td= job.pay_max
+          td= job.fee_min
+          td= job.fee_max
+          td= job.skills.join(', ')
+          td= job.product_proposal_level
+          td= job.business_proposal_level
+          td= job.people_management_level
+          td
+            = link_to job.url, target: '_blank', class: 'button is-white'
+              span.material-icons.md-18 open_in_new
