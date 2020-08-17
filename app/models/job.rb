@@ -1,4 +1,8 @@
 class Job < ApplicationRecord
+  def self.scrape
+    scrape_qiita
+  end
+
   def self.scrape_qiita
     agent = Mechanize.new
     url_base = 'https://jobs.qiita.com/postings'
