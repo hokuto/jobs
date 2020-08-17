@@ -10,4 +10,15 @@ html
     
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    .container
+      .columns
+        .column.is-2
+          aside.menu
+            p.menu-label 一覧
+            ul.menu-list
+              li= link_to '求人', jobs_path, class: (params[:mode].blank? ? "is-active" : nil)
+            p.menu-label 集計
+            ul.menu-list
+              li= link_to '会社', jobs_path(mode: 'company'), class: (params[:mode] == "company" ? "is-active" : nil)
+        .column
+          = yield

@@ -3,26 +3,28 @@ p#notice
 
 h1 Jobs
 
-table.table.is-bordered
-  thead
-    - @job_count_by_company.each do |company_name, count|
-      tr
-        th= company_name
-        td= count
+- if params[:mode] == 'company'
+  table.table.is-bordered
+    tbody
+      - @job_count_by_company.each do |company_name, count|
+        tr
+          th= company_name
+          td= count
 
-table
-  thead
-    tr
-      th Title
-      th Category
-      th Company name
-      th Fee min
-      th Fee max
-  tbody
-    - @jobs.each do |job|
+- else
+  table.table.is-bordered
+    thead
       tr
-        td= job.title
-        td= job.category
-        td= job.company_name
-        td= job.pay_min
-        td= job.pay_max
+        th Title
+        th Category
+        th Company name
+        th Fee min
+        th Fee max
+    tbody
+      - @jobs.each do |job|
+        tr
+          td= job.title
+          td= job.category
+          td= job.company_name
+          td= job.pay_min
+          td= job.pay_max
