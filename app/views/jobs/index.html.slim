@@ -16,27 +16,13 @@ table
       th Title
       th Category
       th Company name
-      th Pay min
-      th Pay max
-      th[colspan="3"]
+      th Fee min
+      th Fee max
   tbody
     - @jobs.each do |job|
       tr
-        td
-          = job.title
-        td
-          = job.category
-        td
-          = job.company_name
-        td
-          = job.pay_min
-        td
-          = job.pay_max
-        td
-          = link_to 'Show', job
-        td
-          = link_to 'Edit', edit_job_path(job)
-        td
-          = link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Job', new_job_path
+        td= job.title
+        td= job.category
+        td= job.company_name
+        td= job.pay_min
+        td= job.pay_max
