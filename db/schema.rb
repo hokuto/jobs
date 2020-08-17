@@ -14,14 +14,17 @@ ActiveRecord::Schema.define(version: 2020_08_15_141845) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "service"
-    t.string "key"
+    t.string "url"
     t.string "company_name"
     t.string "category"
     t.string "title"
     t.string "place"
-    t.integer "pay_min"
-    t.integer "pay_max"
+    t.integer "fee_min"
+    t.integer "fee_max"
     t.json "skills"
+    t.string "product_proposal_level"
+    t.string "business_proposal_level"
+    t.string "people_management_level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
